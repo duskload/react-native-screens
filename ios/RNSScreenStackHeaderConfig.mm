@@ -747,6 +747,13 @@ RNS_IGNORE_SUPER_CALL_END
         setSemanticContentAttribute:self.direction];
     [[UISearchBar appearanceWhenContainedInInstancesOfClasses:@[ navCtrl.navigationBar.class ]]
         setSemanticContentAttribute:self.direction];
+    
+    // Ensure large title elements also respect RTL/LTR direction
+    // This applies to the large title text area and any large title related UI elements
+    if (@available(iOS 11.0, *)) {
+      [[UILabel appearanceWhenContainedInInstancesOfClasses:@[ navCtrl.navigationBar.class ]]
+          setSemanticContentAttribute:self.direction];
+    }
   }
 }
 
