@@ -1,6 +1,6 @@
 import { Route, useTheme } from '@react-navigation/native';
 import * as React from 'react';
-import { Platform, I18nManager } from 'react-native';
+import { Platform } from 'react-native';
 import { SearchBarProps } from '../../types';
 import {
   isSearchBarAvailableForCurrentPlatform,
@@ -121,7 +121,7 @@ export default function HeaderConfig({
       backTitleVisible={headerBackTitleVisible}
       blurEffect={headerStyle.blurEffect}
       color={tintColor}
-      direction={direction || (I18nManager.isRTL ? 'rtl' : 'ltr')}
+      direction={direction}
       disableBackButtonMenu={disableBackButtonMenu}
       backButtonDisplayMode={backButtonDisplayMode}
       hidden={headerShown === false}
